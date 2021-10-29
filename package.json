@@ -1,0 +1,32 @@
+{
+  "name": "tech-blog-da",
+  "version": "1.0.0",
+  "description": "a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.",
+  "main": "npm start",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnsarce21/Tech-Blog-DA.git"
+  },
+  "keywords": [
+    "Tech-Blog"
+  ],
+  "author": "Denis Arce",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnsarce21/Tech-Blog-DA/issues"
+  },
+  "homepage": "https://github.com/dnsarce21/Tech-Blog-DA#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.8.0"
+  }
+}
