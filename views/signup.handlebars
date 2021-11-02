@@ -18,7 +18,15 @@
   </header>
   <br /><br />
   <body>
-    <form class="signup-form">
+    {{#if logged_in}}
+      <a href="= /profile">Profile</a>
+      <button class="no-button" id="logout">logout</button>
+    {{else}}
+      <a href="./homepage.handlebars">login</a>
+    {{/if}}
+    {{!  form handling }}
+
+    {{! <form class="signup-form">
       <div class="from-group">
         <label for="name-signup">Name:</label>
         <input type="text" class="form-input" id="name-signup" />
@@ -32,7 +40,7 @@
         <input type="password" class="form-input" id="password-signup" />
       </div>
       <button class="btn" type="submit">Signup</button>
-    </form>
+    </form> }}
 
   </body>
 </html>

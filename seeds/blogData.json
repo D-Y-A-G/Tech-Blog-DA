@@ -1,0 +1,22 @@
+[
+  {
+    "user_name": "Mike Tyson",
+    "blog_title": "apple",
+    "post_date": "10/31/21",
+    "blog_text": "Javascript is a one of the best languages to learn do to its syntax and structure"
+  },
+
+  {
+    "user_name": "Dyag",
+    "blog_title": "World",
+    "post_date": "10/29/21",
+    "blog_text": "Dedicate time to practice functions, understand the syntax and repetition!"
+  },
+
+  {
+    "user_name": "theAsker",
+    "blog_title": "Hello",
+    "post_date": "10/30/21",
+    "blog_text": "They all have pros and cons, the best one is the one you decide to use to learn explicitly, depending on your style each one has its own characteristics."
+  }
+]

@@ -1,0 +1,31 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECH BLOG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  {{#each blog as |blog| }}
+    <!-- section to input comments on blog add this to a diff handlebars-->
+    
+  <div class="inputSection">
+      <p class="inputTitle">
+        {{title}}
+        <span class="userName">Posted by {{user_name}} on {{format_date date_created}}</span>
+      </p>
+      <p class="inputText">{{blog_text}}</p>
+  </div>
+
+    <!-- section to input comments on blog -->
+  <div class="inputSection">
+      <p class="inputTitle">
+        Title of blog input by user goes here
+        <span class="userName">Posted by "username" on "date"</span>
+      </p>
+      <p class="inputText">Text input by user on app goes here</p>
+  </div>
+  <br /> 
+
+<script src="./js/login.js"></script>

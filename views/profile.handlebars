@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TECH BLOG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+<div class="profile">
+<p>Welcome to your Blog Profile {{user_name}}</p>
+
+<p>-------------------------------------------</p>
+<p class="userPosts">Your Posts<p>
+<p>-------------------------------------------</p>
+
+ <div class="inputSection">
+      <p class="inputTitle">
+        {{title}}
+        <span class="userName">Posted by {{user_name}} on {{format_date date_created}}</span>
+      </p>
+      <p class="inputText">{{blog_text}}</p>
+  </div>
+</div>
