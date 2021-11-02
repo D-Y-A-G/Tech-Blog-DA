@@ -13,8 +13,8 @@ router.get("/", withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: [""],
-        },
+          attributes: [""]
+        }
       ],
     });
 
@@ -29,13 +29,7 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/login", (res, req) => {
-  if (req.session.logged_in) {
-    res.redirect("/");
-    return;
-  }
-  res.render("loginRegister");
-});
+
 
 // router.get("/login/", withAuth, async (req, res) => {
 //   try {
@@ -59,23 +53,18 @@ router.get("/login", (res, req) => {
 //   }
 // });
 
-router.get("/Blogpost/:id", withAuth, async (res, req) => {
+router.get("/Blogpost", withAuth, async (res, req) => {
   try {
     // Find the logged in user based on the session ID
-    const blogData = await Blogpost.findByPk(req.params.id, {
-      include: [
-        {
-          model: Blogpost,
-          attributes: ["id", "blog_text", "blog_title", "post_date", "user_id"],
-          include: { model: User, attributes: ["name"] },
-        },
-      ],
+    const blogData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Blogpost }],
     });
 
-    const blogInfo = blogData.get({ plain: true });
+    const userId = blogData.get({ plain: true });
 
-    res.render("dashboard", {
-      ...blogInfo,
+    res.render("profile", {
+      ...userId,
       logged_in: true,
     });
   } catch (err) {
