@@ -69,3 +69,19 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.postAdd {
+  background-color: dodgerblue;
+  color: antiquewhite;
+  text-decoration: none;
+  font-weight: bolder;
+  width: 150px;
+  height: 35px;
+  font-size: 1.5rem;
+  box-shadow: 5px 5px gray;
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  left: 50%;
+}

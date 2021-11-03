@@ -8,19 +8,19 @@
   </head>
   <!-- header with links to different sections -->
   <header class="headerLinks">
-    <a class="homeBtn" href="#">Home</a>&nbsp&nbsp&nbsp
-    <a class="dashboardBtn" href="#">Dashboard</a>&nbsp&nbsp&nbsp
-    <a class="loginBtn" href="#">Login</a>&nbsp&nbsp&nbsp
-    <a class="logoutBtn" href="#">Logout</a>
+    <a class="homeBtn" href="/">Home</a>&nbsp&nbsp&nbsp
+    <a class="dashboardBtn" href="/dashboard">Dashboard</a>&nbsp&nbsp&nbsp
+    <a class="loginBtn" href="/login">Login</a>&nbsp&nbsp&nbsp
+    <a class="logoutBtn" id="logout" href="#">Logout</a>
     <div class="logo">
       <p class="techBlog">The Tech Blog</p>
     </div>
   </header>
   <br /><br />
-  <body>
-    
-    <!-- section to input comments on blog add this to a diff handlebars-->
-    {{! <div class="inputSection">
+  {{{body}}}
+
+  <!-- section to input comments on blog add this to a diff handlebars-->
+  {{! <div class="inputSection">
       <p class="inputTitle">
         Title of blog input by user goes here
         <span class="userName">Posted by "username" on "date"</span>
@@ -37,5 +37,5 @@
       <p class="inputText">Text input by user on app goes here</p>
     </div>
     <br /> }}
-  </body>
+
 </html>

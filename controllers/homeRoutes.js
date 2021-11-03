@@ -29,29 +29,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/login/", withAuth, async (req, res) => {
-//   try {
-//     const blogData = await Blogpost.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ["name"],
-//         },
-//       ],
-//     });
-
-//     const blog = blogData.get({ plain: true });
-
-//     res.render("blogpost", {
-//       ...blog,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.get("/Blogpost", withAuth, async (res, req) => {
+router.get("/blogpost", withAuth, async (res, req) => {
   try {
     // Find the logged in user based on the session ID
     const blogData = await User.findByPk(req.session.user_id, {
@@ -70,21 +48,21 @@ router.get("/Blogpost", withAuth, async (res, req) => {
   }
 });
 
-//Using withAuth to prevent access
-// router.get("/login", (req, res) => {
-//   if (req.session.logged_in) {
-//     res.redirect("/profile");
-//     return;
-//   }
-//   res.render("loginRegister");
-// });
+// Using withAuth to prevent access
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  }
+  res.render("loginRegister");
+});
 
-// router.get("/profile", (req, res) => {
-//   if (!req.session.logged_in) {
-//     res.redirect("/profile");
-//     return;
-//   }
-//   res.render("dashboard");
-// });
+router.get("/profile", (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect("/login");
+    return;
+  }
+  res.render("profile");
+});
 
 module.exports = router;
