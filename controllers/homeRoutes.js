@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Blogpost, User, Comments } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     //get all blogs, join with user data
     const blogData = await Blogpost.findAll({
@@ -12,9 +12,9 @@ router.get("/", withAuth, async (req, res) => {
           attributes: ["name"],
         },
         {
-          model: Comment,
-          attributes: [""]
-        }
+          model: Comments,
+          attributes: ["user_name"],
+        },
       ],
     });
 
@@ -28,8 +28,6 @@ router.get("/", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-
 
 // router.get("/login/", withAuth, async (req, res) => {
 //   try {
@@ -73,20 +71,20 @@ router.get("/Blogpost", withAuth, async (res, req) => {
 });
 
 //Using withAuth to prevent access
-router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/profile");
-    return;
-  }
-  res.render("loginRegister");
-});
+// router.get("/login", (req, res) => {
+//   if (req.session.logged_in) {
+//     res.redirect("/profile");
+//     return;
+//   }
+//   res.render("loginRegister");
+// });
 
-router.get("/profile", (req, res) => {
-  if (!req.session.logged_in) {
-    res.redirect("/profile");
-    return;
-  }
-  res.render("dashboard");
-});
+// router.get("/profile", (req, res) => {
+//   if (!req.session.logged_in) {
+//     res.redirect("/profile");
+//     return;
+//   }
+//   res.render("dashboard");
+// });
 
 module.exports = router;
