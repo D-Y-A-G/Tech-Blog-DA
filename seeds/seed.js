@@ -14,7 +14,7 @@ const seedDatabase = async () => {
 
   for (const blog of blogData) {
     await Blogpost.create({
-      title: blog.blog_title,
+      blog_title: blog.blog_title,
       user_name: blog.user_name,
       post_date: blog.post_date,
       blog_text: blog.blog_text,

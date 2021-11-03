@@ -37,7 +37,7 @@ Comments.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: "Blogpost",
+        model: "blogpost",
         key: "id",
       },
     },

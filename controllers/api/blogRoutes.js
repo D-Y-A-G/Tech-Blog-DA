@@ -1,6 +1,7 @@
 const router = require("express").Router();
-const { Blogpost } = require("../../models");
+const { Blogpost, User } = require("../../models");
 const withAuth = require("../../utils/auth");
+
 
 router.post("/", async (req, res) => {
   console.log(req.body);
@@ -10,6 +11,7 @@ router.post("/", async (req, res) => {
       blog_text: req.body.blogText,
       user_name: "denis",
       user_id: req.session.user_id,
+      // post_date: "10/29/21",
     });
 
     res.status(200).json(newBlog);

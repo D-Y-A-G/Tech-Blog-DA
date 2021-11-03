@@ -24,7 +24,7 @@ Blogpost.init(
     },
 
     post_date: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
