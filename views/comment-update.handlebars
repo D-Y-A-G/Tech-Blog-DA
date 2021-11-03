@@ -10,10 +10,18 @@
     {{#each blog as |blog| }}
     <!-- section to input comments on blog add this to a diff handlebars-->
     
+  <form class="post-form">
+    <p>Update Post</p>
+    <div class="inputSection">
+      <input class="inputTitle"></input><br>
+      <input class="inputText"></input><br>
+      <button type= "submit" id="submitBtn">submit post</button>
+    </div>
+  </form>
   <div class="inputSection">
       <p class="inputTitle">
         {{title}}
-        <span class="userName">Posted by {{user_name}} on {{format_date date_created}}</span>
+        {{!-- <span class="userName">Posted by {{user_name}} on {{format_date date_created}}</span> --}}
       </p>
       <p class="inputText">{{blog_text}}</p>
   </div>

@@ -2,14 +2,13 @@ const router = require("express").Router();
 const { Blogpost, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-
 router.post("/", async (req, res) => {
   console.log(req.body);
   try {
     const newBlog = await Blogpost.create({
       blog_title: req.body.blogTitle,
       blog_text: req.body.blogText,
-      user_name: "denis",
+      // user_name: req.body.user_name,
       user_id: req.session.user_id,
       // post_date: "10/29/21",
     });
