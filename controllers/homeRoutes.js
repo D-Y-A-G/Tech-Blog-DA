@@ -29,7 +29,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/blogpost", withAuth, async (res, req) => {
+router.get("/blogPost", withAuth, async (res, req) => {
   try {
     // Find the logged in user based on the session ID
     const blogData = await User.findByPk(req.session.user_id, {

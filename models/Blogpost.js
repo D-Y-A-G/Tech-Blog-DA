@@ -13,11 +13,6 @@ Blogpost.init(
       autoIncrement: true,
     },
 
-    // user_name: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
-
     blog_title: {
       type: DataTypes.STRING,
       allowNull: false,

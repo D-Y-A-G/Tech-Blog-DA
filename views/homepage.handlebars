@@ -11,18 +11,19 @@
     <a href="/dashboard" id="newPost">+ New Post +</a>
   </div>
 
-  {{#each blog as |blog|}}
+  {{#each blogpost as |blog|}}
     <!-- section to input comments on blog add this to a diff handlebars-->
 
     <div class="inputSection">
       <p class="inputTitle">
-        {{title}}
+        {{blog.blog_title}}
         <span class="userName">Posted by
-          {{post.user_name}}
+          {{blog.user_name}}
           on
-          {{format_date}}</span>
+          {{blog.format_date}}</span>
       </p>
-      <p class="inputText">{{blog_text}}</p>
+      <p class="inputText">{{blog.blog_text}}</p>
+
     </div>
 
     <!-- section to input comments on blog -->

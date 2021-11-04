@@ -1,4 +1,5 @@
 const postBlogHandler = async (event) => {
+  console.log("Hello");
   event.preventDefault();
 
   const blogTitle = document.querySelector(".inputTitle").value.trim();
@@ -12,7 +13,7 @@ const postBlogHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/blogRoutes");
     } else {
       alert(response.statusText);
     }
@@ -20,5 +21,5 @@ const postBlogHandler = async (event) => {
 };
 
 document
-  .querySelector(".post-form")
+  .querySelector(".blog-form")
   .addEventListener("submit", postBlogHandler);

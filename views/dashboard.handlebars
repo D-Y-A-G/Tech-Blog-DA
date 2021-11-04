@@ -1,37 +1,15 @@
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TECH BLOG</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  
-<form class="post-form" id="blog-form">
+<form class="blog-form">
   
   <div class="inputSection">
-    <h2>New Post</h2>
+      <h2>New Post</h2>
+      <label>Blog Title</label>
       <input class="inputTitle"></input><br>
+      <label>Blog Text</label>
       <input class="inputText"></input>
-      <button type= "submit" id="submitBtn">Submit Post</button>
+      <button class="post-form"  type= "submit" id="submitBtn">Submit Post</button>
   </div>
   </form>
   <br /> 
-
-  {{#each blogpost as |blog| }}
-    <!-- section to input comments on blog add this to a diff handlebars-->
-    
-  <div class="inputSection">
-      <p class="inputTitle">
-        {{blog.blog_title}}
-        <span class="userName">Posted by {{blog.user_name}} on {{blog.format_date}}</span>
-      </p>
-      <p class="inputText">{{blog.blog_text}}</p>
-  </div>
-
-    <!-- section to input comments on blog -->
-
-{{/each}}
 
 <script src="./js/submit.js"></script>
