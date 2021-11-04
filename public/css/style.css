@@ -54,6 +54,7 @@ body {
   opacity: 75%;
   padding-right: 15px;
   padding-top: 5px;
+  right: 100px;
 }
 .inputTitle {
   font-size: 1.75rem;
@@ -101,4 +102,19 @@ body {
   text-align: center;
   position: relative;
   left: 50%;
+}
+.welcome {
+  font-size: 3rem;
+  align-items: center;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.userPosts {
+  font-size: 2rem;
+  align-items: center;
+  text-align: center;
+  color: royalblue;
+  border-top: 5px dotted darkblue;
+  padding-top: 15px;
 }

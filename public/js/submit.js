@@ -13,7 +13,7 @@ const postBlogHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/blogRoutes");
+      document.location.replace("/profile");
     } else {
       alert(response.statusText);
     }
