@@ -2,15 +2,36 @@ const router = require("express").Router();
 const { Blogpost, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.post("/", async (req, res) => {
-  console.log(req.body);
+// router.post("/", async (req, res) => {
+//   console.log(req.body);
+//   const userId = await User.findOne({
+//     where: { id: req.session.user_id },
+//   });
+//   try {
+//     const newBlog = await Blogpost.create({
+//       ...req.body,
+//       username: userId.name,
+//       user_id: req.session.user_id,
+//     });
+//     res.status(200).json(newBlog);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
+router.post("/", withAuth, async (req, res) => {
+  // console.log(req.body);
   try {
     const newBlog = await Blogpost.create({
       blog_title: req.body.blogTitle,
       blog_text: req.body.blogText,
       // user_name: req.body.user_name,
       user_id: req.session.user_id,
-      // post_date: "10/29/21",
+      // post_date: req.body.post_date,
+      include: {
+        model: User,
+        attributes: ["user_id"],
+      },
     });
 
     res.status(200).json(newBlog);
@@ -18,6 +39,8 @@ router.post("/", async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+/////////////// Delete Blog /////////////////
 
 router.delete("/:id", async (req, res) => {
   try {

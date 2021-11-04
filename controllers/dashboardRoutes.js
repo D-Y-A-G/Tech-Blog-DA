@@ -29,10 +29,6 @@ router.get("/comment/:id", withAuth, async (req, res) => {
             attributes: ["user_name"],
           },
         },
-        {
-          model: User,
-          attributes: ["user_name"],
-        },
       ],
     });
     const blogs = blogPost.map((blogs) => blogs.get({ plain: true }));

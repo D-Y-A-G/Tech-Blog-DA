@@ -95,7 +95,7 @@ body {
   width: 150px;
   height: 35px;
   font-size: 1.5rem;
-  box-shadow: 5px 5px gray;
+  box-shadow: 5px 5px rgb(116, 115, 115);
   border-radius: 15px;
   align-items: center;
   text-align: center;

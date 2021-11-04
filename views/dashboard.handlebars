@@ -1,3 +1,4 @@
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +7,11 @@
     <title>TECH BLOG</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-<form class="post-form">
+  
+<form class="post-form" id="blog-form">
+  
   <div class="inputSection">
+    <h2>New Post</h2>
       <input class="inputTitle"></input><br>
       <input class="inputText"></input>
       <button type= "submit" id="submitBtn">Submit Post</button>
@@ -15,15 +19,15 @@
   </form>
   <br /> 
 
-  {{#each blog as |blog| }}
+  {{#each blogpost as |blog| }}
     <!-- section to input comments on blog add this to a diff handlebars-->
     
   <div class="inputSection">
       <p class="inputTitle">
-        {{title}}
-        <span class="userName">Posted by {{user_name}} on {{format_date}}</span>
+        {{blog.blog_title}}
+        <span class="userName">Posted by {{blog.user_name}} on {{blog.format_date}}</span>
       </p>
-      <p class="inputText">{{blog_text}}</p>
+      <p class="inputText">{{blog.blog_text}}</p>
   </div>
 
     <!-- section to input comments on blog -->
