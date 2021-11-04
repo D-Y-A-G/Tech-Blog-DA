@@ -97,6 +97,8 @@ To contribute do a pull request and add features or fix bugs on application.
 [Demo app in Heroku](https://tech-blog-da.herokuapp.com/)
 
 Application images:
+![image](https://user-images.githubusercontent.com/84104912/140251008-b0ad5635-de2f-4fbf-a047-af0568f0e153.png)
+![image](https://user-images.githubusercontent.com/84104912/140251046-ed6fade5-52ae-4ab9-9257-4a7d60792212.png)
 
 
 ## **💬Questions**
